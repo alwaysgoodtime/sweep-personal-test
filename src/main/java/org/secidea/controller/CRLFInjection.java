@@ -27,10 +27,12 @@ public class CRLFInjection {
     public void addCRLFValidation(HttpServletRequest request, HttpServletResponse response) {
         String test3 = request.getParameter("test3");
         test3 = test3.replaceAll("[\n\r]", "");
+        addCRLFValidation(request, response);
         Cookie cookie = new Cookie("test3", test3);
         response.addCookie(cookie);
     }
 
+        addCRLFValidation(request, response);
         Cookie cookie = new Cookie("test3", author);
         response.addCookie(cookie);
     }
