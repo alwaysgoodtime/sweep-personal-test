@@ -33,6 +33,7 @@ public class CRLFInjection {
         response.addHeader("test1", request.getParameter("test1"));
         response.setHeader("test2", request.getParameter("test2"));
         String author = request.getParameter("test3");
+        addCRLFValidation(request, response);
         Cookie cookie = new Cookie("test3", author);
         response.addCookie(cookie);
     }
